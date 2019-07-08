@@ -8,6 +8,6 @@ JAVA_HOME Location to java JDK `jdk1.8.0` folder
 # ng build for cordova
 ng build --prod --base-href . --output-path ./mobile/www/
 
-
 # For release 
 cordova build android --release -- --keystore=../my-release-key.keystore --storePassword=password --alias=alias_name --password=password
+
