@@ -1,13 +1,16 @@
 import { DatabaseService } from './database.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+declare var document: any;
+declare var cordova: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'MobileApp';
   rows = [];
   userform: FormGroup;
@@ -27,6 +30,11 @@ export class AppComponent implements OnInit {
       this.rows = r1.rows;
     }
 
+  }
+
+  ngAfterViewInit() {
+    alert(cordova.file);
+    document.ready(() => { alert('document ready'); });
   }
 
   async update() {
